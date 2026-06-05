@@ -35,18 +35,11 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background: url("assets/images/built-10.webp") center / cover no-repeat;
+  background: #050b13;
 }
 
 body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(90deg, rgba(4, 10, 17, 0.92) 0%, rgba(4, 10, 17, 0.68) 42%, rgba(4, 10, 17, 0.36) 100%),
-    linear-gradient(0deg, rgba(4, 10, 17, 0.88) 0%, rgba(4, 10, 17, 0.16) 48%, rgba(4, 10, 17, 0.58) 100%);
-  pointer-events: none;
+  display: none;
 }
 
 body.menu-open {
@@ -211,8 +204,34 @@ a {
 
 .hero {
   display: grid;
-  align-items: center;
-  padding: calc(var(--header-height) + 70px) 0 72px;
+  width: 100%;
+  min-height: 0;
+  max-width: none;
+  align-items: start;
+  margin-inline: 0;
+  padding: calc(92vh + 48px) max(20px, calc((100vw - var(--content-width)) / 2)) 54px;
+  background: #050b13;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 92vh;
+  background:
+    linear-gradient(0deg, rgba(5, 11, 19, 0.34) 0%, rgba(5, 11, 19, 0.04) 48%, rgba(5, 11, 19, 0.36) 100%),
+    url("assets/images/built-10.webp") center / cover no-repeat;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(92vh - 90px);
+  height: 180px;
+  background: linear-gradient(180deg, rgba(5, 11, 19, 0), #050b13 62%);
+  pointer-events: none;
 }
 
 .hero-bg,
@@ -240,11 +259,11 @@ a {
 .hero-content {
   position: relative;
   z-index: 2;
-  width: min(820px, 100%);
+  width: min(860px, 100%);
   padding: clamp(24px, 4vw, 44px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 8px;
-  background: rgba(6, 15, 26, 0.66);
+  background: rgba(6, 15, 26, 0.72);
   backdrop-filter: blur(18px);
   box-shadow: 0 24px 90px rgba(0, 0, 0, 0.34);
   transform: translateY(20px);
@@ -305,20 +324,18 @@ h3 {
 }
 
 .hero-metrics {
-  position: absolute;
+  position: relative;
   z-index: 2;
   right: 0;
-  bottom: 42px;
-  width: min(430px, calc(100% - 40px));
+  bottom: auto;
+  width: min(430px, 100%);
   display: grid;
   gap: 10px;
+  justify-self: end;
+  margin-top: -202px;
 }
 
 @media (max-height: 780px) and (min-width: 901px) {
-  .hero {
-    padding-top: 118px;
-  }
-
   h1 {
     font-size: clamp(44px, 5.8vw, 74px);
     max-width: 760px;
@@ -364,7 +381,7 @@ h3 {
 .intro-band,
 .modules,
 .gallery-section {
-  padding: 56px 0;
+  padding: 42px 0;
   background: transparent;
 }
 
@@ -736,7 +753,15 @@ h3 {
 
   .hero {
     align-items: center;
-    padding: 112px 0 44px;
+    padding: calc(72vh + 36px) 20px 44px;
+  }
+
+  .hero::before {
+    height: 72vh;
+  }
+
+  .hero::after {
+    top: calc(72vh - 84px);
   }
 
   .hero-metrics {
@@ -744,12 +769,7 @@ h3 {
     right: auto;
     bottom: auto;
     width: 100%;
-    margin-top: 28px;
-  }
-
-  .hero-progress {
-    left: 20px;
-    bottom: 18px;
+    margin-top: 20px;
   }
 
   .intro-band,
