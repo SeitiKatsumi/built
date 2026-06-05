@@ -324,17 +324,6 @@ h3 {
   gap: 12px;
 }
 
-.hero-metrics {
-  position: absolute;
-  z-index: 2;
-  right: max(20px, calc((100vw - var(--content-width)) / 2));
-  bottom: 52px;
-  width: min(760px, calc(100% - 40px));
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-}
-
 @media (max-height: 780px) and (min-width: 901px) {
   h1 {
     font-size: clamp(42px, 4vw, 64px);
@@ -345,37 +334,6 @@ h3 {
     font-size: 18px;
     max-width: 620px;
   }
-
-  .hero-metrics {
-    width: min(680px, calc(100% - 40px));
-  }
-
-  .hero-metrics div {
-    padding: 10px;
-  }
-}
-
-.hero-metrics div {
-  display: grid;
-  grid-template-columns: 52px 1fr;
-  gap: 14px;
-  align-items: center;
-  padding: 13px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: rgba(6, 15, 26, 0.70);
-  backdrop-filter: blur(16px);
-}
-
-.hero-metrics strong {
-  color: var(--gold);
-  font-size: 20px;
-}
-
-.hero-metrics span {
-  color: rgba(255, 255, 255, 0.76);
-  font-size: 13px;
-  line-height: 1.35;
 }
 
 .intro-band,
@@ -767,15 +725,6 @@ h3 {
   .hero {
     min-height: auto;
     padding: 116px 20px 44px;
-  }
-
-  .hero-metrics {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    grid-template-columns: 1fr;
-    width: 100%;
-    margin-top: 20px;
   }
 
   .intro-band,
