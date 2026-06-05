@@ -105,10 +105,6 @@ a {
   gap: 8px;
 }
 
-.main-nav .nav-cta {
-  display: none;
-}
-
 .main-nav a {
   min-height: 40px;
   display: inline-flex;
@@ -887,16 +883,6 @@ h3 {
 
   .header-cta {
     display: none;
-  }
-
-  .main-nav .nav-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 8px;
-    color: #07111d;
-    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
-    font-weight: 900;
   }
 
   .split-layout,
