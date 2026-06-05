@@ -204,7 +204,12 @@ a {
 .intro-band,
 .modules,
 .experience,
-.gallery-section {
+.gallery-section,
+.method-section,
+.principles-section,
+.scenarios-section,
+.benefits-section,
+.generation-section {
   overflow: visible;
 }
 
@@ -354,8 +359,13 @@ h3 {
 }
 
 .intro-band,
+.method-section,
+.principles-section,
 .modules,
-.gallery-section {
+.gallery-section,
+.scenarios-section,
+.benefits-section,
+.generation-section {
   padding: var(--section-gap) 0;
   background: transparent;
 }
@@ -389,6 +399,117 @@ h3 {
 
 .lead-stack p {
   margin-bottom: 0;
+}
+
+.force-grid,
+.method-flow,
+.principles-grid,
+.values-grid,
+.scenario-grid,
+.generation-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.force-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 16px;
+}
+
+.method-flow,
+.scenario-grid,
+.generation-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.principles-grid,
+.values-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 16px;
+}
+
+.force-grid article,
+.method-flow article,
+.principles-grid article,
+.values-grid article,
+.scenario-grid article,
+.generation-grid article,
+.benefit-list {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(6, 15, 26, 0.70);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.24);
+}
+
+.force-grid article,
+.method-flow article,
+.principles-grid article,
+.values-grid article,
+.scenario-grid article,
+.generation-grid article {
+  padding: 24px;
+}
+
+.force-grid span,
+.principles-grid span,
+.scenario-grid span,
+.generation-grid span {
+  display: inline-flex;
+  margin-bottom: 14px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.force-grid strong,
+.values-grid strong {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--white);
+  font-size: 20px;
+}
+
+.method-flow h3,
+.principles-grid h3,
+.scenario-grid h3,
+.generation-grid h3 {
+  line-height: 1.12;
+}
+
+.force-grid p,
+.method-flow p,
+.values-grid p,
+.scenario-grid p,
+.generation-grid p {
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.74);
+  line-height: 1.5;
+}
+
+.method-flow h3 {
+  color: var(--cyan);
+}
+
+.benefit-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  padding: 16px;
+  list-style-position: inside;
+}
+
+.benefit-list li {
+  padding: 16px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.45;
+}
+
+.benefit-list strong {
+  color: var(--gold);
 }
 
 .section-heading {
@@ -771,7 +892,14 @@ h3 {
 
   .split-layout,
   .experience,
-  .module-grid {
+  .module-grid,
+  .force-grid,
+  .method-flow,
+  .principles-grid,
+  .values-grid,
+  .scenario-grid,
+  .generation-grid,
+  .benefit-list {
     grid-template-columns: 1fr;
   }
 
@@ -814,8 +942,13 @@ h3 {
   }
 
   .intro-band,
+  .method-section,
+  .principles-section,
   .modules,
   .gallery-section,
+  .scenarios-section,
+  .benefits-section,
+  .generation-section,
   .experience-panel,
   .app-section {
     padding: var(--section-gap) 0;
@@ -823,6 +956,15 @@ h3 {
 
   .section-heading {
     display: grid;
+    padding: 22px;
+  }
+
+  .force-grid article,
+  .method-flow article,
+  .principles-grid article,
+  .values-grid article,
+  .scenario-grid article,
+  .generation-grid article {
     padding: 22px;
   }
 

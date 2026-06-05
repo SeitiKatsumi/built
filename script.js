@@ -35,7 +35,7 @@ const sectionObserver = new IntersectionObserver(
 sections.forEach((section) => sectionObserver.observe(section));
 
 const revealTargets = document.querySelectorAll(
-  ".intro-band h2, .lead-stack, .section-heading, .module-card, .experience-panel, .gallery-track, .app-content"
+  ".intro-band h2, .lead-stack, .section-heading, .force-grid, .method-flow, .principles-grid, .values-grid, .module-card, .experience-panel, .scenario-grid, .benefit-list, .generation-grid, .gallery-track, .app-content"
 );
 
 revealTargets.forEach((target) => target.classList.add("reveal"));
