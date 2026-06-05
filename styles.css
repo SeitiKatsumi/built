@@ -11,6 +11,7 @@
   --line: rgba(255, 255, 255, 0.16);
   --glass: rgba(8, 17, 30, 0.62);
   --header-height: 82px;
+  --content-width: 1200px;
 }
 
 * {
@@ -19,7 +20,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
 }
 
 body {
@@ -68,7 +68,7 @@ a {
   z-index: 50;
   top: 18px;
   left: 50%;
-  width: min(1180px, calc(100% - 32px));
+  width: min(var(--content-width), calc(100% - 32px));
   min-height: 64px;
   transform: translateX(-50%);
   display: grid;
@@ -197,8 +197,8 @@ a {
 
 .section {
   position: relative;
-  min-height: 100vh;
-  scroll-snap-align: start;
+  width: min(var(--content-width), calc(100% - 40px));
+  margin-inline: auto;
   overflow: visible;
 }
 
@@ -212,7 +212,7 @@ a {
 .hero {
   display: grid;
   align-items: center;
-  padding: calc(var(--header-height) + 70px) clamp(20px, 6vw, 76px) 42px;
+  padding: calc(var(--header-height) + 70px) 0 72px;
 }
 
 .hero-bg,
@@ -307,7 +307,7 @@ h3 {
 .hero-metrics {
   position: absolute;
   z-index: 2;
-  right: clamp(20px, 6vw, 76px);
+  right: 0;
   bottom: 42px;
   width: min(430px, calc(100% - 40px));
   display: grid;
@@ -364,7 +364,7 @@ h3 {
 .intro-band,
 .modules,
 .gallery-section {
-  padding: 112px clamp(20px, 6vw, 76px);
+  padding: 56px 0;
   background: transparent;
 }
 
@@ -521,7 +521,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 112px clamp(20px, 6vw, 76px);
+  padding: 56px 0;
   background: transparent;
 }
 
@@ -628,7 +628,7 @@ h3 {
 .app-section {
   display: grid;
   place-items: center;
-  padding: 112px clamp(20px, 6vw, 76px);
+  padding: 56px 0 88px;
   background: transparent;
 }
 
@@ -661,7 +661,7 @@ h3 {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 24px clamp(20px, 6vw, 76px);
+  padding: 24px max(20px, calc((100vw - var(--content-width)) / 2));
   border-top: 1px solid var(--line);
   background: rgba(5, 11, 19, 0.86);
   backdrop-filter: blur(18px);
@@ -697,10 +697,6 @@ h3 {
 }
 
 @media (max-width: 900px) {
-  html {
-    scroll-snap-type: none;
-  }
-
   .site-header {
     grid-template-columns: auto auto;
     justify-content: space-between;
@@ -739,9 +735,8 @@ h3 {
   }
 
   .hero {
-    min-height: 100svh;
     align-items: center;
-    padding: 116px 20px 32px;
+    padding: 112px 0 44px;
   }
 
   .hero-metrics {
@@ -762,12 +757,7 @@ h3 {
   .gallery-section,
   .experience-panel,
   .app-section {
-    min-height: auto;
-    padding: 96px 20px;
-  }
-
-  .experience-media {
-    min-height: 46vh;
+    padding: 44px 20px;
   }
 
   .section-heading {
