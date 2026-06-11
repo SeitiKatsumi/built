@@ -1,6 +1,6 @@
 # BUILT Landing
 
-Landing page onepage para BUILT Alliance, pronta para deploy via CapRover.
+Landing page onepage para BUILT Alliances, pronta para deploy via CapRover.
 
 ## Rodar localmente
 

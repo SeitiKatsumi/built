@@ -87,13 +87,20 @@ a {
 }
 
 .brand {
-  width: 116px;
-  height: 38px;
+  width: 152px;
+  height: 46px;
   display: flex;
   align-items: center;
 }
 
-.brand img,
+.brand img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+  filter: drop-shadow(0 6px 18px rgba(233, 185, 79, 0.18));
+}
+
 .site-footer img {
   width: 100%;
   filter: drop-shadow(0 6px 18px rgba(233, 185, 79, 0.18));
@@ -204,8 +211,6 @@ a {
 
 .intro-band,
 .modules,
-.experience,
-.gallery-section,
 .method-section,
 .principles-section,
 .scenarios-section,
@@ -247,7 +252,6 @@ a {
 .hero-slide,
 .hero-slider,
 .hero-progress,
-.experience-media,
 .app-section > img {
   display: none;
 }
@@ -373,7 +377,6 @@ h3 {
 .method-section,
 .principles-section,
 .modules,
-.gallery-section,
 .scenarios-section,
 .benefits-section,
 .generation-section {
@@ -391,8 +394,8 @@ h3 {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.8fr);
   gap: clamp(32px, 6vw, 84px);
-  align-items: end;
-  padding: clamp(24px, 4vw, 44px);
+  align-items: start;
+  padding: clamp(22px, 3vw, 34px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
   background: rgba(7, 17, 29, 0.56);
@@ -529,9 +532,9 @@ h3 {
   display: flex;
   justify-content: space-between;
   gap: 36px;
-  align-items: end;
+  align-items: start;
   margin-bottom: 24px;
-  padding: clamp(22px, 3vw, 34px);
+  padding: clamp(22px, 2.4vw, 30px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
   background: rgba(7, 17, 29, 0.54);
@@ -540,7 +543,7 @@ h3 {
 
 .section-heading > p {
   width: min(400px, 100%);
-  margin-bottom: 6px;
+  margin: 0;
   color: rgba(255, 255, 255, 0.68);
   line-height: 1.5;
 }
@@ -654,127 +657,6 @@ h3 {
   font-size: 22px;
 }
 
-.experience {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: var(--section-gap) 0;
-  background: transparent;
-}
-
-.experience-panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: min(760px, 100%);
-  padding: clamp(24px, 4vw, 44px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 8px;
-  background: rgba(7, 17, 29, 0.56);
-  backdrop-filter: blur(22px);
-  box-shadow: 0 22px 72px rgba(0, 0, 0, 0.22);
-}
-
-.feature-list {
-  display: grid;
-  gap: 12px;
-  margin-top: 34px;
-}
-
-.feature-list div {
-  display: grid;
-  grid-template-columns: 50px 1fr;
-  gap: 14px;
-  padding: 18px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.045);
-}
-
-.feature-list span {
-  color: var(--gold);
-  font-weight: 420;
-}
-
-.feature-list p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.76);
-  line-height: 1.45;
-}
-
-.gallery-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: transparent;
-}
-
-.gallery-controls {
-  display: flex;
-  gap: 8px;
-}
-
-.gallery-controls button {
-  width: 48px;
-  height: 48px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--white);
-  font-size: 28px;
-  cursor: pointer;
-}
-
-.gallery-track {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(286px, calc((var(--content-width) - 48px) / 4));
-  gap: 16px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-}
-
-.gallery-track::-webkit-scrollbar {
-  display: none;
-}
-
-.gallery-track figure {
-  position: relative;
-  height: 320px;
-  margin: 0;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  overflow: hidden;
-  scroll-snap-align: start;
-  background: var(--steel);
-}
-
-.gallery-track img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 500ms ease;
-}
-
-.gallery-track figure:hover img {
-  transform: scale(1.05);
-}
-
-.gallery-track figcaption {
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 16px;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: rgba(4, 10, 17, 0.68);
-  backdrop-filter: blur(12px);
-  font-weight: 360;
-  font-size: 16px;
-}
-
 .app-section {
   display: grid;
   place-items: center;
@@ -820,12 +702,17 @@ h3 {
 }
 
 .site-footer img {
-  width: 94px;
+  width: 180px;
+  max-height: 72px;
+  object-fit: contain;
+  object-position: left center;
 }
 
-.site-footer a {
-  color: var(--gold);
+.site-footer span {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
   font-weight: 420;
+  text-align: right;
 }
 
 .reveal {
@@ -864,7 +751,8 @@ h3 {
   }
 
   .brand {
-    width: 96px;
+    width: 128px;
+    height: 40px;
   }
 
   .menu-toggle {
@@ -894,7 +782,6 @@ h3 {
   }
 
   .split-layout,
-  .experience,
   .module-grid,
   .force-grid,
   .method-flow,
@@ -948,11 +835,9 @@ h3 {
   .method-section,
   .principles-section,
   .modules,
-  .gallery-section,
   .scenarios-section,
   .benefits-section,
   .generation-section,
-  .experience-panel,
   .app-section {
     padding: var(--section-gap) 0;
   }
@@ -975,17 +860,13 @@ h3 {
     min-height: 360px;
   }
 
-  .gallery-track {
-    grid-auto-columns: minmax(260px, 82vw);
-  }
-
-  .gallery-track figure {
-    height: 340px;
-  }
-
   .site-footer {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .site-footer span {
+    text-align: left;
   }
 }
 
@@ -1011,7 +892,6 @@ h3 {
   }
 
   .split-layout,
-  .experience-panel,
   .app-content {
     padding: 22px;
   }
@@ -1021,8 +901,4 @@ h3 {
     padding: 22px;
   }
 
-  .feature-list div {
-    grid-template-columns: 38px 1fr;
-    padding: 14px;
-  }
 }

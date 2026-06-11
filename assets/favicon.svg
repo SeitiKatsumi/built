@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="8" fill="#07111d"/>
+  <text
+    x="32"
+    y="38"
+    fill="#ffffff"
+    font-family="Arial Black, Arial, Helvetica, sans-serif"
+    font-size="16"
+    font-weight="900"
+    letter-spacing="-1"
+    text-anchor="middle"
+  >BUILT.</text>
+</svg>

@@ -3,7 +3,6 @@ const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".main-nav");
 const navLinks = [...document.querySelectorAll(".main-nav a")];
 const sections = [...document.querySelectorAll("[data-section]")];
-const gallery = document.querySelector("[data-gallery]");
 
 menuToggle.addEventListener("click", () => {
   const isOpen = nav.classList.toggle("is-open");
@@ -35,7 +34,7 @@ const sectionObserver = new IntersectionObserver(
 sections.forEach((section) => sectionObserver.observe(section));
 
 const revealTargets = document.querySelectorAll(
-  ".intro-band h2, .lead-stack, .section-heading, .force-grid, .method-flow, .principles-grid, .values-grid, .module-card, .experience-panel, .scenario-grid, .benefit-list, .generation-grid, .gallery-track, .app-content"
+  ".intro-band h2, .lead-stack, .section-heading, .force-grid, .method-flow, .principles-grid, .values-grid, .module-card, .scenario-grid, .benefit-list, .generation-grid, .app-content"
 );
 
 revealTargets.forEach((target) => target.classList.add("reveal"));
@@ -56,12 +55,4 @@ revealTargets.forEach((target) => revealObserver.observe(target));
 
 window.addEventListener("scroll", () => {
   header.classList.toggle("is-scrolled", window.scrollY > 24);
-});
-
-document.querySelector("[data-gallery-prev]").addEventListener("click", () => {
-  gallery.scrollBy({ left: -gallery.clientWidth * 0.72, behavior: "smooth" });
-});
-
-document.querySelector("[data-gallery-next]").addEventListener("click", () => {
-  gallery.scrollBy({ left: gallery.clientWidth * 0.72, behavior: "smooth" });
 });
