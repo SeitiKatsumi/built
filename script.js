@@ -3,6 +3,11 @@ const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".main-nav");
 const navLinks = [...document.querySelectorAll(".main-nav a")];
 const sections = [...document.querySelectorAll("[data-section]")];
+const currentYear = document.querySelector("[data-current-year]");
+
+if (currentYear) {
+  currentYear.textContent = String(new Date().getFullYear());
+}
 
 menuToggle.addEventListener("click", () => {
   const isOpen = nav.classList.toggle("is-open");
