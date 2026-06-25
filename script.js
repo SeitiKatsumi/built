@@ -30,7 +30,8 @@ const sectionObserver = new IntersectionObserver(
       const id = entry.target.id;
       if (!id) return;
       navLinks.forEach((link) => {
-        link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
+        const href = link.getAttribute("href") || "";
+        link.classList.toggle("is-active", href === `#${id}` || href.endsWith(`/#${id}`));
       });
     });
   },
