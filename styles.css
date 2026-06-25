@@ -109,14 +109,14 @@ a {
 .main-nav {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 4px;
 }
 
 .main-nav a {
   min-height: 40px;
   display: inline-flex;
   align-items: center;
-  padding: 0 14px;
+  padding: 0 10px;
   border-radius: 8px;
   color: rgba(255, 255, 255, 0.74);
   font-size: 11px;

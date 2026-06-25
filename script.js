@@ -28,6 +28,7 @@ const sectionObserver = new IntersectionObserver(
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       const id = entry.target.id;
+      if (!id) return;
       navLinks.forEach((link) => {
         link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
       });
