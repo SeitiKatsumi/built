@@ -39,7 +39,7 @@ const sectionObserver = new IntersectionObserver(
 sections.forEach((section) => sectionObserver.observe(section));
 
 const revealTargets = document.querySelectorAll(
-  ".intro-band h2, .lead-stack, .section-heading, .force-grid, .method-flow, .principles-grid, .values-grid, .module-card, .scenario-grid, .benefit-list, .generation-grid, .app-content"
+  ".intro-band h2, .meaning-section h2, .lead-stack, .section-heading, .force-grid, .method-flow, .principles-grid, .values-grid, .module-card, .scenario-grid, .governance-note, .benefit-list, .generation-grid, .app-content, .page-panel"
 );
 
 revealTargets.forEach((target) => target.classList.add("reveal"));
