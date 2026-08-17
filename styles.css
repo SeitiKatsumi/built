@@ -862,6 +862,13 @@ h3 {
   line-height: 1.45;
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 20px;
+}
+
 .footer-contact {
   justify-self: end;
   color: var(--gold-soft);
@@ -1045,6 +1052,10 @@ h3 {
 
   .footer-contact {
     justify-self: start;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
   }
 }
 
