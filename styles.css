@@ -1095,3 +1095,22 @@ h3 {
   }
 
 }
+
+/* Membership seal follows the fixed header without crowding navigation. */
+.bni-badge {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  display: block;
+  width: 108px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 900px) {
+  .bni-badge {
+    width: 78px;
+    top: calc(100% + 8px);
+  }
+}
